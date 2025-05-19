@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Zrnic';
+  src: url('/fonts/zrnic___.ttf') format('truetype');
+  /* You can add font-weight and font-style here if you have different font files for them */
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

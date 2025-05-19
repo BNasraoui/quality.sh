@@ -19,6 +19,10 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Arial', 'Helvetica', 'sans-serif'],
+        zrnic: ['Zrnic', 'sans-serif'], // Added Zrnic font family
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

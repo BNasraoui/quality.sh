@@ -8,30 +8,81 @@ interface PathwayCardProps {
   description: string
   ctaText: string
   href: string
-  backgroundImage: string
+  backgroundImage?: string
+  articleNumber: string
+  totalArticles?: string
+  icons?: Array<{ active: boolean; icon: ReactNode }>
+  testingStrategy?: string
 }
 
-export default function PathwayCard({ icon, title, description, href, backgroundImage, ctaText }: PathwayCardProps) {
+export default function PathwayCard({
+  title,
+  href,
+  ctaText,
+  articleNumber,
+  totalArticles = "42",
+  icons = [],
+}: PathwayCardProps) {
+  const formattedNumber = articleNumber.padStart(2, "0")
+
   return (
-    <div className="h-full">
-      <Card className="relative h-full overflow-hidden border-0 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${backgroundImage})` }}>
-          <div className="absolute inset-0 bg-black/50"></div>
-        </div>
-        <div className="relative z-10 p-6 text-white h-full flex flex-col">
-          <div className="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center backdrop-blur-sm mb-4">
-            {icon}
+    <Card className="relative h-full overflow-hidden border-2 border-black/80 bg-white text-black transition-all duration-300 hover:shadow-xl hover:-translate-y-1 p-0">
+      <div className="flex flex-col h-full">
+        {/* Top section wrapper for padding - THIS DIV HAS THE MAIN TOP BORDER */}
+        <div className="w-full border-b-2 border-black/80 p-4">
+          {/* This div no longer uses items-start. It's for vertical stacking. */}
+          <div className="flex flex-col space-y-4">
+            {/* Icons grid: use self-alignment to float left if w-auto */}
+            <div className="grid grid-cols-5 gap-1 w-auto mr-auto"> {/* Added mr-auto to align left */}
+              {icons && icons.length > 0 ? (
+                icons.slice(0, 5).map((iconItem, index) => (
+                  <div
+                    key={index}
+                    className={`w-8 h-8 border border-black flex items-center justify-center p-1 ${iconItem.active ? "opacity-100" : "opacity-20"}`}
+                  >
+                    {iconItem.icon}
+                  </div>
+                ))
+              ) : (
+                null
+              )}
+            </div>
+
+            {/* Border between icons and numbers - this should now be full width */}
+            <div className="w-full border-b-2 border-black/80 my-2"></div>
+
+            {/* Wrapper for number graphics to allow centering */}
+            <div className="w-full flex justify-center">
+              {/* Centered number graphics - simplified to a single text block */}
+              <div className="flex items-center justify-center">
+                <span className="text-8xl font-bold font-zrnic" aria-hidden="true">
+                  {formattedNumber}
+                </span>
+              </div>
+            </div>
           </div>
-          <h3 className="text-2xl font-bold mb-3">{title}</h3>
-          <p className="text-white/90 mb-16 font-medium">{description}</p>
-          
-          <div className="absolute bottom-4 left-6 right-6">
-            <Link href={href} className="block w-full bg-white text-black px-4 py-2 rounded-md hover:bg-gray-100 transition-colors text-center">
-              {ctaText} →
-            </Link>
-          </div>
         </div>
-      </Card>
-    </div>
+
+        {/* Title - now flex container to align title text to bottom */}
+        <div className="p-4 border-b-2 border-black/80 flex-grow flex flex-col justify-end">
+          <h3 className="text-lg font-bold font-mono">{title}</h3>
+        </div>
+
+        {/* CTA Button */}
+        <div className="p-4">
+          <Link
+            href={href}
+            className="block w-full bg-black text-white px-4 py-2 font-mono text-center hover:bg-gray-800 transition-colors"
+          >
+            {ctaText} →
+          </Link>
+        </div>
+
+        {/* Bottom section with testing strategy and article number */}
+        <div className="p-4 flex justify-end items-center">
+          {formattedNumber}/{totalArticles}
+        </div>
+      </div>
+    </Card>
   )
 }

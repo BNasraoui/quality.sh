@@ -5,9 +5,11 @@ import { Inter } from "next/font/google"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "quality.sh | Professional Consulting & Blog",
-  description: "Expert consulting services in quality engineering, system architecture, and technical leadership.",
-    generator: 'v0.dev'
+  title: "quality.sh",
+  description: "Solving the software quality crisis one pull request at a time.",
+  icons: {
+    icon: "/icons/logo-no-text.svg",
+  },
 }
 
 export default function RootLayout({

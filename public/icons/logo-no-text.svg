@@ -1,0 +1,16 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="100 220 290 80"
+  width="32"
+  height="32"
+  preserveAspectRatio="xMidYMid meet"
+>
+  {/* Red */}
+  <path d="M100 220 L240 220 L270 300 L130 300 Z" fill="#e6000a" />
+  {/* Yellow part */}
+  <path d="M180 220 L240 220 L270 300 L210 300 Z" fill="#ffd000" />
+  {/* Teal/green part */}
+  <path d="M240 220 L300 220 L330 300 L270 300 Z" fill="#00aa7e" />
+  {/* Blue part */}
+  <path d="M300 220 L360 220 L390 300 L330 300 Z" fill="#2062af" />
+</svg>
