@@ -55,7 +55,7 @@ export default function PathwayCard({
             <div className="w-full flex justify-center">
               {/* Centered number graphics - simplified to a single text block */}
               <div className="flex items-center justify-center">
-                <span className="text-8xl font-bold font-zrnic" aria-hidden="true">
+                <span className="text-6xl md:text-8xl font-bold font-zrnic" aria-hidden="true">
                   {formattedNumber}
                 </span>
               </div>

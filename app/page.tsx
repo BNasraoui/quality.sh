@@ -22,12 +22,10 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-white flex flex-col">
-      <Header />
+      <Header/>
 
-      <section className="relative w-full h-screen">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-10" />
-
-        <div className="container relative z-20 h-full flex flex-col">
+      <section className="relative w-full flex-grow bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-10">
+        <div className="container relative z-20 min-h-screen flex flex-col pt-16 pb-16">
           {/* Hero Content */}
           <div className="flex-grow flex items-center">
             <div className="max-w-2xl text-white">
@@ -44,7 +42,7 @@ export default function LandingPage() {
           </div>
 
           {/* Article Cards */}
-          <div className="pb-16">
+          <div className="mt-auto">
             <h2 className="text-2xl font-bold mb-8 text-white">Latest Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Article 1 */}
