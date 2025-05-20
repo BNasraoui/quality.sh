@@ -3,7 +3,7 @@ import { BookOpen, Zap, Boxes, Flame, Target, Beaker } from "lucide-react"
 import PathwayCard from "@/components/pathway-card"
 import Footer from "@/components/footer"
 import Header from "@/components/header"
-import AnimatedHeadline from "@/components/AnimatedHeadline"
+import AnimatedHeadline from "@/components/animated-headline"
 
 export default function LandingPage() {
   const headlinePhrases = [

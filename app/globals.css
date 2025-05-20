@@ -39,6 +39,8 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    --blog-background: 220 14% 96%;
   }
 
   .dark {
@@ -79,4 +81,16 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom Text Selection Styles */
+::selection {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+/* Firefox specific */
+::-moz-selection {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
 }

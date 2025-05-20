@@ -3,9 +3,10 @@ import React from 'react';
 interface LogoProps extends React.SVGProps<SVGSVGElement> {
   width?: string | number;
   className?: string;
+  textColor?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({ width = 120, className, ...props }) => {
+const Logo: React.FC<LogoProps> = ({ width = 120, className, textColor, ...props }) => {
   // Calculate height based on the SVG's aspect ratio (adjust from 6:1 to about 7.5:1)
   const height = typeof width === 'number' ? width / 7.5 : 'auto';
   
@@ -28,12 +29,12 @@ const Logo: React.FC<LogoProps> = ({ width = 120, className, ...props }) => {
         {/* Blue part */}
         <path d="M300 220 L360 220 L390 300 L330 300 Z" fill="#2062af" />
         <text
-          x="500"
+          x="510"
           y="280"
           fontFamily="Zrnic"
           fontSize="70"
           textAnchor="middle"
-          fill="white"
+          fill={textColor || "white"}
         >
           Quality.sh
         </text>
