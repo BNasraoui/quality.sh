@@ -29,19 +29,25 @@ export default function LandingPage() {
           {/* Hero Content */}
           <div className="flex-grow flex items-center">
             <div className="max-w-2xl text-white">
-              <AnimatedHeadline 
-                baseText="quality.sh"
-                phrases={headlinePhrases}
-                className="text-5xl md:text-7xl font-bold mb-6 font-zrnic"
-                interval={2500}
-              />
-              <p className="text-xl md:text-2xl opacity-90 mb-8">
+              {/* Static headline on mobile, animated on desktop */}
+              <h1 className="text-5xl md:text-7xl font-bold mb-6 font-zrnic md:hidden">
+                quality.sh
+              </h1>
+              <div className="hidden md:block">
+                <AnimatedHeadline 
+                  baseText="quality.sh"
+                  phrases={headlinePhrases}
+                  className="text-5xl md:text-7xl font-bold mb-6 font-zrnic"
+                  interval={2500}
+                />
+              </div>
+                            <p className="text-xl md:text-2xl opacity-90 mb-4 md:mb-8">
                 Software quality is a solvable problem, but it's not easy.
               </p>
 
               <Link
                 href="/contact"
-                className="block w-full max-w-xs text-white px-4 py-2 font-mono text-center hover:bg-gray-800 transition-colors mb-12 md:mb-8"
+                className="text-white underline hover:no-underline md:no-underline md:block md:w-full md:max-w-xs md:px-4 md:py-2 md:font-mono md:text-center md:hover:bg-gray-800 transition-colors"
               >
                 Let's Build Better Software →
               </Link>
@@ -49,7 +55,7 @@ export default function LandingPage() {
           </div>
 
           {/* Article Cards */}
-          <div className="mt-auto">
+          <div className="mt-12 md:mt-auto">
             <h2 className="text-2xl font-bold mb-8 text-white">Latest Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Article 1 */}
