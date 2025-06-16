@@ -9,16 +9,16 @@ export default function ContactPage() {
     totalArticles: "42",
     title: "Get In Touch",
     body: `
-## Let's Talk Quality
+## Let's Talk Software Quality
 
-Need help with quality? I'm always happy to chat and offer a consultation for teams looking to improve their quality processes.
+Need help with software quality? Let's talk about how we can improve your quality processes. 
 
 ### What I Can Help With
 
 - **Quality Architecture** - Designing quality into your systems from the ground up
 - **Team Transformation** - Evolving traditional Quality Assurance processes into something more streamlined and modern or building new ones from the ground up  
-- **TestOps** - Building a test automation strategy that to help your engineers get the feedback they faster.
-- **AI Integration** - Leveraging and implementing AI into your products and processes without sacrificing quality
+- **TestOps** - Building a test automation strategy that to help your engineers get the feedback they need faster.
+- **AI Integration Testing** - Leveraging and implementing AI into your products and processes without sacrificing quality
 
 ### Ways to Connect
 
