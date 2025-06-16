@@ -13,6 +13,7 @@ interface PathwayCardProps {
   totalArticles?: string
   icons?: Array<{ active: boolean; icon: ReactNode }>
   testingStrategy?: string
+  comingSoon?: boolean
 }
 
 export default function PathwayCard({
@@ -22,11 +23,18 @@ export default function PathwayCard({
   articleNumber,
   totalArticles = "42",
   icons = [],
+  comingSoon = false,
 }: PathwayCardProps) {
-  const formattedNumber = articleNumber.padStart(2, "0")
+  const formattedNumber = /^\d+$/.test(articleNumber) ? articleNumber.padStart(2, "0") : articleNumber
 
   return (
-    <Card className="relative h-full overflow-hidden border-2 border-black/80 bg-white text-black transition-all duration-300 hover:shadow-xl hover:-translate-y-1 p-0">
+    <Card className={`relative h-full overflow-hidden border-2 border-black/80 bg-white text-black transition-all duration-300 p-0 ${comingSoon ? 'opacity-75' : 'hover:shadow-xl hover:-translate-y-1'}`}>
+      {/* Coming Soon Ribbon */}
+      {comingSoon && (
+        <div className="absolute top-4 right-4 z-10 bg-red-500 text-white px-3 py-1 text-xs font-bold transform rotate-12 shadow-lg">
+          COMING SOON
+        </div>
+      )}
       <div className="flex flex-col h-full">
         <div className="w-full border-b-2 border-black/80 p-4">
           <div className="flex flex-col space-y-4">
@@ -65,12 +73,18 @@ export default function PathwayCard({
 
         {/* CTA Button */}
         <div className="p-4">
-          <Link
-            href={href}
-            className="block w-full bg-black text-white px-4 py-2 font-mono text-center hover:bg-gray-800 transition-colors"
-          >
-            {ctaText} →
-          </Link>
+          {comingSoon ? (
+            <div className="block w-full bg-gray-400 text-gray-600 px-4 py-2 font-mono text-center cursor-not-allowed">
+              {ctaText} →
+            </div>
+          ) : (
+            <Link
+              href={href}
+              className="block w-full bg-black text-white px-4 py-2 font-mono text-center hover:bg-gray-800 transition-colors"
+            >
+              {ctaText} →
+            </Link>
+          )}
         </div>
 
         {/* Article number */}

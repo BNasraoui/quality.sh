@@ -66,7 +66,8 @@ export function Article({
   body,
   className,
 }: ArticleProps) {
-  const formattedNumber = articleNumber.padStart(2, "0")
+  // Only pad with zeros if the articleNumber is numeric, otherwise use as-is
+  const formattedNumber = /^\d+$/.test(articleNumber) ? articleNumber.padStart(2, "0") : articleNumber
 
   return (
     <TooltipProvider>

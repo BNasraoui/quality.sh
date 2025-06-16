@@ -35,7 +35,9 @@ export default function Header({ textColor }: HeaderProps) {
     <header className="w-full bg-black md:bg-transparent static md:absolute top-0 left-0 right-0 z-30">
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center gap-2">
-          <Logo width={180} height={180} className="rounded" textColor={textColor} />
+          <Link href="/">
+            <Logo width={180} height={180} className="rounded" textColor={textColor} />
+          </Link>
         </div>
         {/* Desktop Navigation - hidden on small screens, visible from md upwards */}
         <nav className="hidden md:flex items-center gap-8">
