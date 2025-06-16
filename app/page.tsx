@@ -8,15 +8,16 @@ import AnimatedHeadline from "@/components/animated-headline"
 
 export default function LandingPage() {
   const headlinePhrases = [
-    "rules",
+    "",
     "saved software",
+    "is the future",
+    "rules",
     "is a botnet",
     "is a cult",
     "are challenging",
     "pwned me",
     "is run by ASIO",
     "rejected my PR",
-    "is the future",
   ];
 
   return (
@@ -40,7 +41,7 @@ export default function LandingPage() {
 
               <Link
                 href="/contact"
-                className="block w-full max-w-xs text-white px-4 py-2 font-mono text-center hover:bg-gray-800 transition-colors"
+                className="block w-full max-w-xs text-white px-4 py-2 font-mono text-center hover:bg-gray-800 transition-colors mb-12 md:mb-8"
               >
                 Let's Build Better Software →
               </Link>

@@ -58,7 +58,7 @@ export default function BlogPage() {
             <div className="mb-12 pt-8">
               <h1 className="text-5xl md:text-7xl font-bold mb-6 font-zrnic text-white">Blog</h1>
               <p className="text-xl md:text-2xl opacity-90 max-w-2xl text-white">
-                Thoughts on software quality, engineering culture, and building systems that actually work.
+                Thoughts on software quality, engineering culture, and building systems that work.
               </p>
             </div>
             

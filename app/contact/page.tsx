@@ -24,11 +24,11 @@ Need help with quality? I'm always happy to chat and offer a consultation for te
 
 **Email**: [Ben.Nasraoui@gmail.com](mailto:ben.nasraoui@gmail.com)
 
-**LinkedIn**: I am fairly accessible on LinkedIn. Always [happy to connect](https://www.linkedin.com/in/ben-nasraoui/)
+**LinkedIn**: I am fairly accessible on [LinkedIn](https://www.linkedin.com/in/ben-nasraoui/)
 
 ### Response Time
 
-I typically respond within 24-48 hours. For urgent quality incidents or time-sensitive projects, mention "URGENT" in your subject line.
+I typically respond within 24 hours. For anything urgent, your best bet is to send me a message on LinkedIn.
 
 ---
 
